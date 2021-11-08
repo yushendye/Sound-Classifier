@@ -16,5 +16,5 @@ def get_model():
 
 def train_model(X_train, y_train, X_test, y_test, epochs, save_at):
 	model = get_model()
-	checkpoint_cb = tf.keras.callbacks.ModelCheckpoint(filepath = save_at, verbose=1, save_best_only=True)
-	model.fit(x=X_train, y = y_train, epochs = 100, validation_data=(X_test, y_test), callbacks=[checkpoint_cb])
+	checkpoint_cb = tf.keras.callbacks.ModelCheckpoint(filepath = save_at + '/Sound_Classifier.h5', verbose=1, save_best_only=True)
+	model.fit(x=X_train, y = y_train, epochs = 100, validation_data=(X_test, y_test), callbacks=[checkpoint_cb], verbose = 1)
